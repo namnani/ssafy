@@ -1,0 +1,106 @@
+package com.ssafy.algo;
+
+import java.io.FileInputStream;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Solution42미로도착지점 {
+	static int N, Si, Sj, P, D;
+	static int Ai, Aj;
+
+	//0, 상, 우, 하, 좌 =>즉, 북동남서  
+	static int[][] dir = {{0,0}, {-1,0}, {0,1}, {1,0}, {0,-1}};
+			
+	public static void main(String[] args) throws Exception{
+		System.setIn(new FileInputStream("Solution42미로도착지점.txt"));
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		firstLoop:for(int test_case = 1; test_case <= T; test_case++)
+		{
+			N = sc.nextInt();
+			
+			int[][] room = new int[N + 1][N + 1];// because start from 1;
+			
+			Si = sc.nextInt(); //출발점의 i좌표
+			Sj = sc.nextInt(); //출발점의 j좌표
+			P = sc.nextInt();
+
+			int Pi[] = new int[P];  // 함정의 i좌표의 모음
+			int Pj[] = new int[P];  // 함정의 j좌표의 모음
+
+			for(int k=0; k<P; k++) {
+				Pi[k] = sc.nextInt();
+				Pj[k] = sc.nextInt();
+				room[Pi[k]][Pj[k]] = 1; //함정이아니고 점퍼표
+			}
+
+			D = sc.nextInt();
+			int Dd[] = new int[D];  // 방향 모음
+			int Da[] = new int[D];  // 이동 칸수 모음
+
+			for(int k=0; k<D; k++) {
+				Dd[k] = sc.nextInt();
+				Da[k] = sc.nextInt();
+			}
+			//////////////////////////////
+			//( 이 부분에 알고리즘 구현을 한다. )//
+			//////////////////////////////
+//			for(int a[]:room) System.out.println(Arrays.toString(a));
+			
+			//시작위치가 점퍼나 범위밖인지 체크
+			if( 0>=Si || Si>N || 0>=Sj || Sj>N || room[Si][Sj]==1 ) {
+				System.out.println("#"+test_case+" "+0+" "+0);
+				continue firstLoop;
+			}
+			
+			loop:for(int n = 0; n<D; n++) {
+				int i = Dd[n];
+				int j = Da[n];
+//				if( 0>=i || i>Y || 0>=j || j>X || room[i][j]==-1 ) {
+//					
+//					continue loop;
+//				}
+//				int c = player[n][2];
+				for(int k = 0; k<j; k++) {
+//					int d = room[i][j]/10;
+//					int m = room[i][j]%10;
+					Si = Si+dir[i][0];
+					Sj = Sj+dir[i][1];
+					if( 0>=Si || Si>N || 0>=Sj || Sj>N || room[Si][Sj]==1 ) {
+						System.out.println("#"+test_case+" "+0+" "+0);
+						continue firstLoop;
+					}
+				}
+//				Answer = Answer - 1000 + room[i][j]*100;
+			}
+
+
+			System.out.println("#"+test_case+" "+Si+" "+Sj);
+//			System.out.println("#"+test_case+" "+Ai+" "+Aj);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
