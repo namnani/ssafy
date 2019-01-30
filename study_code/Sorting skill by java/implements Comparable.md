@@ -1,4 +1,4 @@
-# Class에서 implements Comaprable을 구현
+# Class에서 implements Comparable을 구현
 ## 정렬기준이 되는 메소드인 compareTo() 메소드를 재정의해준다.
 ```
 public int compareTo(Member o) {
