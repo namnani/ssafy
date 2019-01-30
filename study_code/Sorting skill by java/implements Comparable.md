@@ -1,6 +1,6 @@
 # Class에서 implements Comaprable을 구현하여
 정렬기준이 되는 메소드인 compareTo() 메소드를 재정의해준다.
-
+```
 public int compareTo(Member o) {
 
 //		return o.getAge() - age; //나이 내림차순
@@ -14,3 +14,4 @@ public int compareTo(Member o) {
 //		}
 //		return comp;
 	}
+```
