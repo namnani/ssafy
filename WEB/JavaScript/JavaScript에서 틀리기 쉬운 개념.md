@@ -19,7 +19,7 @@ if(names[0]){  // 1== 1,  names[0] != undefined 안해주고 옆에처럼 해주
 	  console.log('다르다.');
 }
 ```
-에 대한 정리.
+
 
 # JavaScript에서 eval() 함수
 - eval() 함수는 문자열을 자바스크립트 코드로 실행하는 함수입니다.
