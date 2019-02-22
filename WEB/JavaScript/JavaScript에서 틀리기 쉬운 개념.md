@@ -23,3 +23,6 @@ if(names[0]){  // 1== 1,  names[0] != undefined 안해주고 옆에처럼 해주
 
 # JavaScript에서 eval() 함수
 - eval() 함수는 문자열을 자바스크립트 코드로 실행하는 함수입니다.
+
+# JavaScript에서 typeof는 연산자다.
+- 함수가 아님에 유의!
